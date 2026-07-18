@@ -1,0 +1,25 @@
+info:
+  name: Create Overtime Rate
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/overtime-rates"
+  body:
+    type: json
+    data: |-
+      {
+        "rate_type" : "Tst Data",
+        "multiplier" : "2",
+        "description" : "Test Desc"
+      }
+  auth:
+    type: bearer
+    token: "{{jwtToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

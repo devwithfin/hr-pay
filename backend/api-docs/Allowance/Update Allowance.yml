@@ -1,0 +1,25 @@
+info:
+  name: Update Allowance
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/allowances/4"
+  body:
+    type: json
+    data: |-
+      {
+        "allowance_name" : "Test Allowance", 
+        "is_fixed" : "false", 
+        "default_amount" : "0"
+      }
+  auth:
+    type: bearer
+    token: "{{jwtToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,6 @@
+name: local
+variables:
+  - name: baseUrl
+    value: http://localhost:4000/api/v1
+  - name: jwtToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJyb2xlIjoiSFIiLCJpYXQiOjE3ODQxMTMxMDQsImV4cCI6MTc4NDExNjcwNH0.pt9jTsTSDGF2fAxZaBCWR1sJ-8o_SMgrYPBCT1CHaJU
