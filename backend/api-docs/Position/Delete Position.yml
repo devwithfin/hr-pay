@@ -1,0 +1,17 @@
+info:
+  name: Delete Position
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/positions/15"
+  auth:
+    type: bearer
+    token: "{{jwtToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: Update Position
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/positions/15"
+  body:
+    type: json
+    data: |-
+      {
+        "position_name" : "Tes2t Position", 
+        "base_salary" : "10", 
+        "department_id" : "1", 
+        "job_allowance" : "10"
+      }
+  auth:
+    type: bearer
+    token: "{{jwtToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
