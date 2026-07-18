@@ -6,9 +6,11 @@ import errorMiddleware from './middlewares/error.middleware';
 
 const app: Application = express();
 
+const FRONTEND_PORT = process.env.FRONTEND_PORT || 3000;
+const BACKEND_PORT = process.env.BACKEND_PORT || 4000;
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: `http://localhost:${FRONTEND_PORT}`,
     credentials: true,
   })
 );
@@ -19,8 +21,8 @@ app.use('/api/v1', mainRouter);
 
 app.use(errorMiddleware);
 
-const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+
+app.listen(BACKEND_PORT, () => {
+  console.log(`Server running on http://localhost:${BACKEND_PORT}`);
 });
