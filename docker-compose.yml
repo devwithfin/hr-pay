@@ -20,11 +20,14 @@ services:
       dockerfile: Dockerfile
     container_name: next_fe
     restart: always
+    environment:
+      - WATCHPACK_POLLING=true
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     volumes:
       - ./frontend:/app
       - /app/node_modules
+      - /app/.next
     depends_on:
       - backend
 
